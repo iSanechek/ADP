@@ -1,7 +1,7 @@
 # ADP
 podcast player and a little more
 
-Unofficial android apk for [AndroidDevPodcast](https://androiddev.apptractor.ru/)
+Unofficial android app for [AndroidDevPodcast](https://androiddev.apptractor.ru/)
 
 # To-Do
 * Read Rss - ***Done***.
