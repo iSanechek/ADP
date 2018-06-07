@@ -1,0 +1,1 @@
+include ':app', ':network', ':injector', ':common', ':storage', ':repository'

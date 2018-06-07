@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/episode_list_screen">
+
+    <fragment
+        android:id="@+id/episode_list_screen"
+        android:name="ru.isanechek.shaitan.ui.fragments.episode.list.EpisodeListScreen"
+        android:label="@string/episode_list_screen_title"
+        tools:layout="@layout/base_list_screen_layout">
+        <action
+            android:id="@+id/action_navigate_from_list_to_detail_screen"
+            app:destination="@id/episode_detail_screen"/>
+    </fragment>
+    <fragment
+        android:id="@+id/episode_detail_screen"
+        android:name="ru.isanechek.shaitan.ui.fragments.episode.detail.EpisodeDetailScree"
+        android:label="@string/episode_detail_screen_title"
+        tools:layout="@layout/episode_detail_screen_layout"/>
+
+</navigation>

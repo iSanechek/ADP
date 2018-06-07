@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/episode_detail_screen_cover"
+        android:layout_width="@dimen/episode_detail_cover_size"
+        android:layout_height="@dimen/episode_detail_cover_size"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/androiddev"
+        android:contentDescription="@string/detail_episode_cover" />
+
+    <TextView
+        android:id="@+id/episode_detail_screen_title"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp8"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="18sp"
+        android:textColor="@color/primary_text_color"
+        app:layout_constraintBottom_toTopOf="@+id/episode_detail_screen_seekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/episode_detail_screen_cover"
+        tools:text="@string/big_text_for_test" />
+
+    <SeekBar
+        android:id="@+id/episode_detail_screen_seekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/episode_detail_screen_title" />
+
+    <TextView
+        android:id="@+id/episode_detail_screen_start_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp8"
+        android:textColor="@color/primary_text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/episode_detail_screen_seekBar"
+        app:layout_constraintTop_toBottomOf="@+id/episode_detail_screen_seekBar"
+        tools:text="00:00:00" />
+
+    <TextView
+        android:id="@+id/episode_detail_screen_end_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp8"
+        android:textColor="@color/primary_text_color"
+        app:layout_constraintEnd_toEndOf="@+id/episode_detail_screen_seekBar"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/episode_detail_screen_seekBar"
+        tools:text="01:25:00" />
+
+    <ImageButton
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:id="@+id/episode_detail_screen_fav_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginEnd="@dimen/dp8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/episode_detail_screen_start_time_tv"
+        app:srcCompat="@drawable/ic_star_border_black_24dp" />
+
+    <ImageButton
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:id="@+id/episode_detail_screen_play_pause_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginBottom="@dimen/dp8"
+        app:layout_constraintBottom_toTopOf="@+id/episode_detail_screen_share_btn"
+        app:layout_constraintEnd_toEndOf="@+id/episode_detail_screen_share_btn"
+        app:layout_constraintStart_toStartOf="@+id/episode_detail_screen_share_btn"
+        app:layout_constraintTop_toBottomOf="@+id/episode_detail_screen_fav_btn"
+        app:srcCompat="@drawable/ic_pause_circle_filled_black_24dp" />
+
+    <ImageButton
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:id="@+id/episode_detail_screen_share_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginEnd="@dimen/dp8"
+        android:layout_marginBottom="@dimen/dp8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/episode_detail_screen_fav_btn"
+        app:srcCompat="@drawable/ic_share_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/episode_detail_screen_replay_btn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginBottom="@dimen/dp8"
+        app:layout_constraintBottom_toTopOf="@+id/episode_detail_screen_share_btn"
+        app:layout_constraintEnd_toStartOf="@+id/episode_detail_screen_play_pause_btn"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/episode_detail_screen_fav_btn"
+        app:srcCompat="@drawable/ic_replay_10_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/episode_detail_screen_forward_btn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginEnd="@dimen/dp8"
+        android:layout_marginBottom="@dimen/dp8"
+        app:layout_constraintBottom_toTopOf="@+id/episode_detail_screen_share_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toEndOf="@+id/episode_detail_screen_play_pause_btn"
+        app:layout_constraintTop_toBottomOf="@+id/episode_detail_screen_fav_btn"
+        app:srcCompat="@drawable/ic_fast_forward_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/episode_detail_screen_info_btn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginEnd="@dimen/dp16"
+        android:layout_marginBottom="@dimen/dp8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/episode_detail_screen_forward_btn"
+        app:srcCompat="@drawable/ic_info_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/episode_detail_screen_setting_btn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/episode_detail_screen_replay_btn"
+        app:srcCompat="@drawable/ic_settings_black_24dp" />
+</android.support.constraint.ConstraintLayout>

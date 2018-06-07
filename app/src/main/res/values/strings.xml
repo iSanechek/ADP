@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Shaitan</string>
+    <string name="episode_list_screen_title">Episodes</string>
+    <string name="episode_detail_screen_title">Episode detail</string>
+    <string name="big_text_for_test">Grouping tasks like this avoids the effects of task starvation. e.g. disk reads dont wait behind webservice requests.</string>
+    <string name="detail_episode_cover">detail episode cover</string>
+    <string name="notif_play_title">play</string>
+    <string name="notif_pause_title">pause</string>
+</resources>

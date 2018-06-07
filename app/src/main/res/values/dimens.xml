@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dp16">16dp</dimen>
+    <dimen name="number_episode_bg_radius">16dp</dimen>
+    <dimen name="dp8">8dp</dimen>
+    <dimen name="dp4">4dp</dimen>
+    <dimen name="episode_detail_cover_size">200dp</dimen>
+</resources>

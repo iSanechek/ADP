@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
+androidExtensions {
+    experimental = true
+}
+
+android {
+    compileSdkVersion build_versions.target_sdk
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.kotlin.stdlib
+    implementation deps.kotlin.coroutinesCore
+    implementation deps.kotlin.coroutinesAndroid
+
+    implementation deps.support.v7
+    implementation deps.support.design
+    implementation deps.support.v4
+    implementation deps.constraint
+    implementation deps.support.recyclerview
+    implementation deps.support.annotations
+
+    implementation deps.room.runtime
+    kapt deps.room.compiler
+
+    implementation deps.navigation.ui
+    implementation deps.navigation.fragment
+
+    implementation deps.ktx
+    implementation deps.paging
+
+    implementation deps.koin.core
+    implementation deps.koin.android
+    implementation deps.koin.architecture
+
+    implementation project(':repository')
+    implementation project(':common')
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}

@@ -1,0 +1,78 @@
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+
+static def getDateTime() {
+    DateFormat df = new SimpleDateFormat("dd MMMMM yyyy");
+    return df.format(new Date()) + " г.";
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+
+    def fileNaming = "apk/Shaitan"
+    def versionNumber = 1
+    def versionMajor = "0"
+    def versionMinor = "0"
+    def versionPatch = "1"
+
+    def versionBuild = -1
+    def versionPropsFile = file('version.properties')
+    if (versionPropsFile.canRead()) {
+        def Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+        versionBuild = versionProps['VERSION_BUILD'].toInteger() + 1
+        versionProps['VERSION_BUILD'] = versionBuild.toString()
+        versionProps['DATE_BUILD'] = getDateTime()
+        versionProps.store(versionPropsFile.newWriter(), null)
+    }
+
+    def appId = "ru.isanechek.shaitan"
+    defaultConfig {
+        applicationId appId
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode versionNumber
+        versionName "${versionMajor}.${versionMinor}.${versionPatch} (${versionBuild})"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${fileNaming}-${versionMajor}.${versionMinor}.${versionPatch}.apk"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // kotlin
+    implementation deps.kotlin.stdlib
+    // koin
+    implementation deps.koin.core
+    implementation deps.koin.android
+
+    implementation project(':app')
+    implementation project(':network')
+    implementation project(':repository')
+    implementation project(':storage')
+    implementation project(':common')
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
