@@ -4,7 +4,9 @@ podcast player and a little more
 Unofficial android apk for [AndroidDevPodcast](https://androiddev.apptractor.ru/)
 
 # To-Do
-* Read Rss - ***In progress***.
+* Read Rss - ***Done***.
+
+
 * Preview info detail - ***In progress***. 
 * Streaming/Offline listening episode - ***In progress***.
 
