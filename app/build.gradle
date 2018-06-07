@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
 
 kotlin {
     experimental {
@@ -45,13 +44,11 @@ dependencies {
 
     implementation deps.support.v7
     implementation deps.support.design
+    implementation deps.support.card
     implementation deps.support.v4
     implementation deps.constraint
     implementation deps.support.recyclerview
     implementation deps.support.annotations
-
-    implementation deps.room.runtime
-    kapt deps.room.compiler
 
     implementation deps.navigation.ui
     implementation deps.navigation.fragment

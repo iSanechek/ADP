@@ -11,11 +11,15 @@ import ru.isanechek.common.vo.Episode
 import ru.isanechek.repository.ActionStatus
 import ru.isanechek.shaitan.ui.fragments.base.BaseListScreen
 import ru.isanechek.shaitan.utils.tools._id
+import ru.isanechek.shaitan.utils.tools._string
 
 class EpisodeListScreen : BaseListScreen() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        toolbar.title = getString(_string.episode_list_screen_title)
+
         val viewModel = getViewModel<EpisodeListViewModel>()
         viewModel.loadData()
         if (refresh.isRefreshing) refresh.isRefreshing = false
@@ -26,7 +30,8 @@ class EpisodeListScreen : BaseListScreen() {
         val episodeAdapter = EpisodeListAdapter()
         episodeAdapter.setOnClickListener(object: EpisodeListAdapter.OnItemClickListener {
             override fun onItemClick(view: View, episode: Episode, position: Int) {
-                Navigation.findNavController(view).navigate(_id.episode_detail_screen, bundleOf("episode" to episode))
+                Navigation.findNavController(view)
+                        .navigate(_id.episode_detail_screen, bundleOf("episode" to episode))
             }
         })
 
