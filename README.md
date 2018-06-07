@@ -2,6 +2,7 @@
 podcast player and a little more
 
 Unofficial android app for [AndroidDevPodcast](https://androiddev.apptractor.ru/)
+### min api 23
 
 # To-Do
 * Read Rss - ***Done***.
